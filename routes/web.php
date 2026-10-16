@@ -1,18 +1,12 @@
 <?php
 
+use App\Http\Controllers\MateriaController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
-
+// Redirige la raíz al listado de materias
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('materia.index');
 });
+
+// Ruta tipo resource para CRUD completo (index, create, store, show, edit, update, destroy)
+Route::resource('materia', MateriaController::class);
