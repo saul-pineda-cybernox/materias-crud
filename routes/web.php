@@ -9,4 +9,7 @@ Route::get('/', function () {
 });
 
 // Ruta tipo resource para CRUD completo (index, create, store, show, edit, update, destroy)
-Route::resource('materia', MateriaController::class);
+// En routes/web.php
+Route::resource('materia', MateriaController::class)->parameters([
+    'materia' => 'materia'
+]);
